@@ -233,9 +233,98 @@ XSECTION.fwd%>%
   scale_y_log10()+ theme_bw()+
   ggtitle('Cum Xsectional momentum returns, combined')
 
-
 ```
 
 
 ## Time Series Momentum Strategy
 
+```{r Time series returns, echo=T}
+
+#Test Trend Following Strategy per feature
+A.fwd%>%
+  #filter(!feature%in%c('x_dsh_30','x_range_10','x_range_15','x_range_25'))%>%
+  #We got 1 row for each date, ticker and feature.
+  #Summarize the returns of 10 tickers for each feature and date
+  group_by(date,feature)%>%
+  mutate(
+    weightedRet=0.5*pmin(2.5,pmax(-2.5,lagScaledValue))/10*ret
+  )%>%
+  summarise(sumRet=sum(weightedRet))%>%
+  #Now we got 1 row for each feature and date
+  group_by(feature)%>%
+  arrange(date)%>%
+  mutate(vami=(cumprod(1+sumRet)) )%>%
+  ungroup()%>%
+  ggplot(aes(x=date,y=vami))+geom_line(size=1)+facet_wrap(~feature)+
+  scale_y_log10()+theme_bw()+
+  ggtitle('Trend Following Returns, by feature')
+
+
+
+#Test Trend Following Strategy combined
+A%>%
+  #We got 1 row for each date, ticker and feature.
+  #Summarize the returns of 10 tickers for each feature and date
+  group_by(date,base)%>%
+  mutate(trendWeight=0.5*pmin(2,pmax(-2,lagScaledValue)))%>%
+  summarise(megaFactor=mean(trendWeight))%>%
+  inner_join(mom_factor_wide,by=c('base','date'))%>%
+  group_by(date)%>%
+  mutate(weightedRet=1*megaFactor/10*ret)%>%
+  summarize(sumRet=sum(weightedRet))%>%
+  arrange(date)%>%
+  mutate(vami=cumprod(1+sumRet))%>%
+  ggplot(aes(x=date,y=vami))+geom_line(size=1)+
+  scale_y_log10()+theme_bw()+
+  ggtitle('Trend Following Returns, combined')
+
+
+```
+
+
+## Combined Strategy (X-Sectional & Time Series Momentum)
+
+```{r Combined Returns, echo=T}
+
+momAlloc=0.5
+trendAlloc=0.5
+
+Combined=A%>%
+  group_by(date,base)%>%
+  mutate(trendWeight=0.5*pmin(2,pmax(-2,lagScaledValue)))%>%
+  summarize(trendWeight=mean(trendWeight)/10,momRank=mean(rank))%>%
+  ungroup()%>%
+  inner_join(mom_factor_wide,by=c('base','date'))%>%
+  group_by(date)%>%
+  mutate(
+    momWeight=momRank-mean(momRank),
+    momWeight=momWeight/sum(abs(momWeight))
+  )%>%
+  mutate(combinedWeight=momAlloc*momWeight+trendAlloc*trendWeight)%>%
+  mutate(combinedRet=combinedWeight*ret)%>%
+  ungroup()%>%
+  select(date,base,ret,momWeight,trendWeight,combinedWeight,combinedRet,is_index,close_spot,close_perp)
+
+
+Combined%>%
+  group_by(date)%>%
+  summarize(sumRet=sum(combinedRet))%>%
+  mutate(vami=cumprod(1+1*sumRet))%>%
+  mutate(CAGR=last(vami)^(1/(n()/365))-1)%>%
+  arrange(date)%>%
+  mutate(vola=roll_sd(log(vami/lag(vami)),30)*sqrt(365))%>%
+  mutate(DD=vami/cummax(vami)-1)%>%
+  select(date,vami,DD,vola,CAGR)%>%
+  pivot_longer(cols=-date)%>%
+  ggplot(aes(x=date,y=value,color=name))+geom_step()+facet_wrap(~name,scales='free_y',ncol=1)
+
+```
+
+
+
+## Portfolio-Level Volatility Targeting
+
+```{r Combined Returns, echo=T}
+
+
+```
