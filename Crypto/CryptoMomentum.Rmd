@@ -7,22 +7,235 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(lubridate)
+library(data.table)
+library(httr)
+library(pbapply)
+library(roll)    #Rolling calculations
 ```
 
 ## What we're trying to do
 
-This example shows
 
-```{r cars}
-summary(cars)
+## Getting historical data from FTX
+
+
+```{r Get FTX data for coins with both Spot and Perp, echo=T}
+
+#Get list of tickers
+FTX.markets=bind_rows(content(GET('https://ftx.com/api/markets' ))['result'])%>%
+  filter(is.na(tokenizedEquity))
+FTX.spot=FTX.markets%>%filter(type=='spot' & quoteCurrency=='USD')
+FTX.perp=FTX.markets%>%filter(type=='future' & substr(name,nchar(name)-3,nchar(name))=='PERP')
+FTX.LongShort=intersect(FTX.spot$baseCurrency,FTX.perp$underlying)
+FTX.tickers=c(paste0(FTX.LongShort,'/USD'),paste0(FTX.LongShort,'-PERP'))
+
+#### Get data ####
+DATA=bind_rows(pblapply(FTX.tickers, function(x){
+  s=paste0('https://ftx.com/api/markets/',tolower(x),
+           '/candles?resolution=86400')#/&start_time=',as.numeric(as_datetime('2021-01-01')))
+  bind_rows(content(GET(s))[['result']])%>%
+    mutate(ticker=x,
+           date=as_date(startTime))%>%
+    select(ticker,date,open,high,low,close,volume)
+}))
+
+head(DATA%>%filter(date==max(date)))
+
+```
+## Processing FTX historical data
+
+Let's filter for coins that trade against USD, and get data only from the point in which coins have both spot and perp data. Then we put spot and perp in separate columns, and compute spot returns and volatilities.
+
+
+```{r Process FTX data, echo=T}
+
+P=DATA%>%
+  mutate(base=gsub('-PERP','',gsub('/USD','',ticker)))%>%
+  filter(!base %in% c('USDT','XAUT'))%>%
+  mutate(price_usd=close)%>%
+  group_by(date,base)%>%
+    mutate(N=n())%>%
+  ungroup()%>%
+  mutate(type=if_else(gsub('-PERP','',ticker)==base,'perp','spot'))%>%
+  #Get number of contracts available per market (spot, perp, or both. 1 or 2)
+  group_by(base,date)%>%
+    mutate(N=n())%>%
+  ungroup()%>%
+  #Pivot by base and type
+  select(base,type,N,date,close,volume)%>%
+  arrange(base,date,type)%>%
+  pivot_wider(names_from=c(type),values_from =c(close,volume))%>%
+  #Compute median USD volume of spot market
+  group_by(base)%>%
+    arrange(date)%>%
+    mutate(avg_volume=roll_median(volume_spot,30))%>%
+  ungroup()%>%
+  #Volatilities and returns
+  group_by(base)%>%
+    arrange(date)%>%
+    mutate(ret=close_spot/lag(close_spot)-1)%>%
+    mutate(ret.fwd=lead(close_spot)/close_spot-1)%>%
+    mutate(vola=roll_sd(log(close_spot/lag(close_spot)),30))%>%
+  ungroup()
+
+
 ```
 
-## Including Plots
+## Compute Momentum Factors
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r Compute Momentum Factors, echo=T}
+
+mom_factors = P %>%
+  #### Compute Momentum Factors ####
+  group_by(base) %>%
+    arrange(date) %>%
+    mutate(
+      t_mom_20 = log(close_spot / lag(close_spot, 20)),
+      t_mom_30 = log(close_spot / lag(close_spot, 30)),
+      t_mom_40 = log(close_spot / lag(close_spot, 40))
+    ) %>%
+    # Price to SMA factor
+    mutate(
+      t_psma_40 = close_spot / roll_mean(close_spot, 40) - 1,
+      t_psma_50 = close_spot / roll_mean(close_spot, 50) - 1,
+      t_psma_60 = close_spot / roll_mean(close_spot, 60) - 1
+    ) %>%
+    # SMA ratio factor
+    mutate(
+      t_smaf_3_25 = roll_mean(close_spot, 3) / roll_mean(close_spot, 25) - 1,
+      t_smaf_5_30 = roll_mean(close_spot, 5) / roll_mean(close_spot, 30) - 1,
+      t_smaf_5_40 = roll_mean(close_spot, 5) / roll_mean(close_spot, 40) - 1
+    ) %>%
+    # Range over recent history
+    mutate(
+      t_rrp_25 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 25),
+      t_rrp_30 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 30),
+      t_rrp_50 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 50)
+    ) %>%
+    # Range
+    mutate(
+      t_range_15 = (close_spot - roll_min(close_spot, 15)) / (roll_max(close_spot, 15) - roll_min(close_spot, 15)) - 0.5,
+      t_range_25 = (close_spot - roll_min(close_spot, 25)) / (roll_max(close_spot, 25) - roll_min(close_spot, 25)) - 0.5,
+      t_range_30 = (close_spot - roll_min(close_spot, 30)) / (roll_max(close_spot, 30) - roll_min(close_spot, 30)) - 0.5
+    ) %>%
+  ungroup()%>%
+  
+  #### Pivot longer by date,base and factor, to perform cross sectional calculations ####
+  pivot_longer(starts_with('t_'), names_to = 'feature', values_to = 'value')%>%
+
+  #### Scale the features, to compare each feature as apple to apples ####
+  group_by(base, feature)%>%
+    arrange(date)%>%
+    mutate(lagValue=lag(value))%>%
+    mutate(
+      scaledValue = value / roll_sd(value, 30),
+      lagScaledValue=lag(scaledValue)
+    )%>%  
+  ungroup()%>%
+
+  #### Remove all incomplete rows ####  
+  na.omit()
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Define Universe Based on Liquidity
+
+```{r Define Universe, echo=T}
+
+Liquidity=mom_factors%>%
+  select(date,base,avg_volume)%>%
+  distinct(date,base,.keep_all=T)%>%
+  
+  #### Rank by USD volume ####
+  group_by(date)%>%
+    mutate(volume_rank=row_number(desc(avg_volume)))%>%
+    mutate(market_count=n())%>%
+  ungroup()%>%
+  
+  #### Rank markets by USD volume ####
+  group_by(base)%>%
+    arrange(date)%>%
+    mutate(is_index=!is.na(lag(volume_rank)) & lag(volume_rank)<=10 & lag(market_count)>=10)%>%   #Flag if coin in top 10
+    mutate(is_index.fwd=!is.na(volume_rank) & volume_rank<=10 & market_count>=10)%>%
+  ungroup()
+
+
+A.fwd=mom_factors%>%
+  #### Join with liquidity table, to get volum ranking ####
+  inner_join(Liquidity,by=c('date'='date','base'='base'))%>%
+  mutate(ret=ret.fwd)%>%
+    #### Pick top 10 coins by liquidity ####
+  filter(is_index.fwd)%>%
+    
+    #### Rank among cryptos based on feature ####
+  group_by(date, feature)%>% 
+    mutate(
+      rank = row_number(value),                 #Rank in ascending order
+      weight = rank - mean(rank),               #Negative values for shorts
+      scaled_weight = weight/sum(abs(weight)),  #Scale so that sum of abs is 0
+      weightedRet=ret*scaled_weight             #Per market
+    )%>%
+    ungroup()
+
+#NOTE: We  use indicators as they become available.
+# For example, out of 9 indicators, we may be using just 3 for a few days, etc.
+# Until more data is avialable to compute everything.
+
+```
+
+## Evaluate X-Sectional Long/Short returns, by feature
+
+```{r X-Sectional Returns, echo=T}
+
+
+#Test long/short for each momentum feature
+A.fwd%>%
+  #We got 1 row for each date, ticker and feature.
+  #Summarize the returns of 10 tickers for each feature and date
+  group_by(date, feature)%>%
+  summarise(sumRet=sum(weightedRet))%>%
+  #Now we got 1 row for each feature and date
+  group_by(feature)%>%
+  arrange(date)%>%
+  mutate(lagRet=lag(sumRet))%>%
+  na.omit()%>%
+  mutate(vami=(cumprod(1+sumRet)) )%>%
+  ungroup()%>%
+  ggplot(aes(x=date,y=vami))+geom_line(size=1)+
+  facet_wrap(~feature)+theme_bw()+
+  scale_y_log10()+
+  ggtitle('Cum Xsectional momentum returns, by feature')
+
+#Combine everything
+XSECTION.fwd=A.fwd%>%
+  group_by(date, base) %>%
+  summarise(megafactor = mean(rank),ret=max(ret))%>%  #1 row per date and base
+  group_by(date)%>%
+  mutate(
+    weight=megafactor-mean(megafactor),
+    scaled_weight=weight/sum(abs(weight))
+  )%>%
+  ungroup()
+
+
+XSECTION.fwd%>%
+  group_by(date)%>%
+  summarize(sumRet=sum(weightedRet))%>% #1 row per date
+  na.omit()%>%
+  arrange(date)%>%
+  mutate(vami=cumprod(1+sumRet))%>%
+  ggplot(aes(x=date,y=vami))+geom_line(size=1)+
+  scale_y_log10()+ theme_bw()+
+  ggtitle('Cum Xsectional momentum returns, combined')
+
+
+```
+
+
+## Time Series Momentum Strategy
+
