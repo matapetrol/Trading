@@ -1,0 +1,188 @@
+CommercialCsiNumber,CommercialDeliveryMonth,UACsiNumber,SymbolCommercial,SymbolUA,Name,IsActive,TerminalPointValue,FullPointValue,Currency,ContractSize,Units,MinimumTick,TickValue,StartDate,EndDate,ConversionFactorCode
+171,54,3569,A$,AD^,"Swedish Krona per 1 Australian$",1,,,SEK,"AUD 1","SEK/AUD",1,,2000-01-03,2022-02-18,4
+171,43,2166,A$,AD,"French Francs per 1 Australian$",0,,,FRF,"AUD 1","AUD",1,,1999-06-07,2002-02-28,3
+171,38,2161,A$,AD#,"Deutsche Marks per 1 Australian$",0,,,DEM,"AUD 1","AUD",1,,1986-09-19,1998-02-26,4
+171,56,3571,A$,AD*,"Hungarian Forints per 1 Australian$",1,,,HUF,"AUD 1","HUF/AUD",1,,2000-01-03,2022-02-18,3
+171,51,2168,A$,AD!,"New Zealand Dollars per 1 Australian $",1,,,NZD,"AUD 1","AUD",1,,1999-06-07,2022-02-18,5
+171,40,2163,A$,AD5,"Swiss Francs per 1 Australian$",1,,,CHF,"AUD 1","AUD",1,,1986-09-19,2022-02-18,5
+171,58,3573,A$,AD),"Norwegian Kroner per 1 Australian$",1,,,NOK,"AUD 1","NOK/AUD",1,,2000-01-03,2022-02-18,4
+171,53,3568,A$,AD%,"Mexican Pesos per 1 Australian$",1,,,MXN,"AUD 1","MXN/AUD",1,,2000-01-03,2022-02-18,4
+171,42,2165,A$,AD7,"Canadian Dollars per 1 Australian$",1,,,CAD,"AUD 1","AUD",1,,1999-06-07,2022-02-18,5
+171,37,2160,A$,AD3,"U.K. Sterling per 1 Australian $",1,,,GBP,"AUD 1","AUD",1,,1986-09-19,2022-02-18,5
+171,55,3570,A$,AD&,"Chinese Yuan per 1 Australian$",1,,,CNY,"AUD 1","CNY/AUD",1,,2000-01-03,2022-02-18,4
+171,44,2167,A$,AD9,"Hong Kong Dollars per 1 Australian$",1,,,HKD,"AUD 1","AUD",1,,1999-06-07,2022-02-18,4
+171,39,2162,A$,AD4,"Japanese Yen per 1 Australian$",1,,,JPY,"AUD 1","AUD",1,,1986-09-19,2022-02-18,3
+171,57,3572,A$,AD(,"Poland Zloty per 1 Australian$",1,,,PLN,"AUD 1","PLN/AUD",1,,2000-01-03,2022-02-18,4
+171,52,2169,A$,AD$,"Singapore Dollars per 1 Australian$",1,,,SGD,"AUD 1","AUD",1,,1999-06-07,2022-02-18,4
+171,41,2164,A$,AD6,"U.S. Dollars per 1 Australian$",1,,,USD,"AUD 1","AUD",1,,1971-01-04,2022-02-18,4
+390,37,2250,US$,QE0,"Australian Dollars per 1 U.S. Dollar",1,,,AUD,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,56,2269,US$,QF5,"Mexican Pesos per 1 U.S. Dollar",1,,,MXN,"USD 1","USD",1,,1993-11-08,2022-02-18,4
+390,49,2262,US$,QE#,"Norwegian Kroners per 1 U.S. Dollar",1,,,NOK,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,44,2257,US$,QE7,"Hong Kong Dollars per 1 U.S. Dollar",1,,,HKD,"USD 1","USD",1,,1981-01-02,2022-02-18,5
+390,39,2252,US$,QE2,"Canadian Dollars per 1 U.S. Dollar",1,,,CAD,"USD 1","USD",1,,1971-01-04,2022-02-18,5
+390,58,2271,US$,QF1,"Swedish Kronas per 1 U.S. Dollar",1,,,SEK,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,53,2266,US$,QE},"Swiss Francs per 1 U.S. Dollar",1,,,CHF,"USD 1","USD",1,,1971-01-04,2022-02-18,5
+390,51,2264,US$,QE%,"New Zealand Dollars per 1 U.S. Dollar",1,,,NZD,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,46,2259,US$,QE9,"Japanese Yen per 1 U.S. Dollar",1,,,JPY,"USD 1","USD",1,,1971-01-04,2022-02-18,3
+390,41,2254,,QE4,"Danish Krones per 1 U.S. Dollar",0,,,DKK,"USD 1","DKK/USD",1,,1971-01-04,2017-12-13,4
+390,60,2273,US$,QF3,"Korean Won per 1 U.S. Dollar",1,,,KRW,"USD 1","USD",1,,1981-04-13,2022-02-18,2
+390,55,2268,US$,QF4,"U.S. Dollars per 1 U.K. Sterling",1,,,USD,"USD 1","GBP",1,,1971-01-04,2022-02-18,4
+390,48,2261,US$,QE,"Netherlands Gilders per 1 U.S. Dollar",0,,,NLG,"USD 1","USD",1,,1994-09-05,2002-02-28,4
+390,43,2256,US$,QE,"French Francs per 1 U.S. Dollar",0,,,FRF,"USD 1","USD",1,,1994-09-05,2002-02-28,3
+390,38,2251,US$,QE,"Belgium Francs per 1 U.S. Dollar",0,,,BEF,"USD 1","USD",1,,1994-09-05,2002-02-28,2
+390,57,2270,US$,QE_,"South African Rands per 1 U.S. Dollar",1,,,ZAR,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,50,2263,US$,QE,"Finnish Marks per 1 U.S. Dollar",0,,,FIM,"USD 1","USD",1,,1994-09-05,2002-02-28,4
+390,45,2258,US$,QE,"Italian Lira per 1 U.S. Dollar",0,,,ITL,"USD 1","USD",1,,1994-09-05,2002-02-28,1
+390,40,2253,US$,QE3,"Greek Drachma per 1 U.S. Dollar",0,,,GRD,"USD 1","USD",1,,1994-09-05,2005-05-03,2
+390,59,2272,US$,QF,"Austrian Shillings per 1 U.S. Dollar",0,,,ATS,"USD 1","USD",1,,1994-09-05,2002-02-28,2
+390,54,2267,US$,QE&,"Spanish Pesetas per 1 U.S. Dollar",0,,,ESP,"USD 1","USD",1,,1994-09-05,2005-05-03,2
+390,52,2265,US$,QE{,"Singapore Dollars per 1 U.S. Dollar",1,,,SGD,"USD 1","USD",1,,1981-01-02,2022-02-18,5
+390,47,2260,US$,QE!,"Malaysian Ringits per 1 U.S. Dollar",1,,,MYR,"USD 1","USD",1,,1971-01-04,2022-02-18,4
+390,42,2255,US$,QE,"German Marks per 1 U.S. Dollar",0,,,DEM,"USD 1","USD",1,,1994-09-05,2002-02-28,4
+490,37,2280,DE3,CR,"Australian Dollars per 1 D-Mark",0,,,AUD,"DEM 1","DEM",1,,1996-03-05,1997-05-14,4
+490,59,2302,DE3,CR,"Austrian Shillings per 1 D-Mark",0,,,ATS,"DEM 1","DEM",1,,1996-03-05,1999-02-16,4
+490,52,2295,DE3,CE,"Singapore Dollars per 1 D-Mark",0,,,SGD,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+490,46,2289,DE3,CR,"Japanese Yen per 1 D-Mark",0,,,JPY,"DEM 1","DEM",1,,1996-03-05,2002-02-28,2
+490,39,2282,DE3,CR,"Canadian Dollars per 1 D-Mark",0,,,CAD,"DEM 1","DEM",1,,1996-03-05,1997-05-14,4
+490,54,2297,DE3,CR,"Spanish Pesetas per 1 D-Mark",0,,,ESP,"DEM 1","DEM",1,,1996-03-05,1999-02-16,4
+490,49,2292,DE3,CR,"Norwegian Kroners per 1 D-mark",0,,,NOK,"DEM 1","DEM",1,,1996-03-05,2000-03-31,4
+490,43,2286,DE3,CR,"French Francs per 1 D-Mark",0,,,FRF,"DEM 1","DEM",1,,1996-03-05,1999-02-16,4
+490,58,2301,DE3,CR,"Swedish Kronas per 1 D-Mark",0,,,SEK,"DEM 1","DEM",1,,1996-03-05,2000-03-31,4
+490,51,2294,DE3,CR,"New Zealand Dollars per 1 D-Mark",0,,,NZD,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+490,45,2288,DE3,CR,"Italian Lira per 1 D-Mark",0,,,ITL,"DEM 1","DEM",1,,1996-03-05,1999-02-16,2
+490,38,2281,DE3,CR,"Belgium Francs per 1 D-Mark",0,,,BEF,"DEM 1","DEM",1,,1996-03-05,1999-02-16,3
+490,60,2303,DE3,CR,"U.S. Dollars per 1 D-mark",0,,,USD,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+490,53,2296,DE3,CR,"Swiss Francs per 1 D-Mark",0,,,CHF,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+490,48,2291,DE3,CR,"Netherlands Gilders per 1 D-Mark",0,,,NLG,"DEM 1","DEM",1,,1996-03-05,1999-02-16,4
+490,41,2284,DE3,CR,"Danish Krones per 1 D-Mark",0,,,DKK,"DEM 1","DEM",1,,1996-03-05,2000-03-31,4
+490,55,2298,DE3,CR,"U.K. Sterling per 1 D-mark",0,,,GBP,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+490,50,2293,DE3,CR,"Finnish Marks per 1 D-Mark",0,,,FIM,"DEM 1","DEM",1,,1996-02-23,1999-02-16,4
+490,44,2287,DE3,CR,"Hong Kong Dollars per 1 D-Mark",0,,,HKD,"DEM 1","DEM",1,,1996-03-05,2002-02-28,4
+590,56,2329,GB2,DR8,"Mexican Pesos per 1 U.K. Sterling",1,,,MXN,"GBP 1","GBP",1,,1999-06-07,2022-02-18,4
+590,40,2313,GB2,DR,"Greek Drachma per 1 U.K. Sterling",0,,,GRD,"GBP 1","GBP",1,,1998-06-05,2002-02-28,2
+590,51,2324,GB2,DR%,"New Zealand Dollars per 1 U.K. Sterling",1,,,NZD,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+590,46,2319,GB2,DR9,"Japanese Yen per 1 U.K. Sterling",1,,,JPY,"GBP 1","GBP",1,,1998-06-05,2022-02-18,3
+590,58,2331,GB2,DR6,"Swedish Kronas per 1 U.K. Sterling",1,,,SEK,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+590,53,2326,GB2,DR^,"Swiss Francs per 1 U.K. Sterling",1,,,CHF,"GBP 1","GBP",1,,1998-06-05,2022-02-18,5
+590,37,2310,GB2,DR1,"Australian Dollars per 1 U.K. Sterling",1,,,AUD,"GBP 1","GBP",1,,1999-06-07,2022-02-18,5
+590,48,2321,GB2,DR,"Netherlands Gilders per 1 U.K. Sterling",0,,,NLG,"GBP 1","GBP",1,,1998-06-05,1999-02-16,4
+590,43,2316,GB2,DR,"French Francs per 1 U.K. Sterling",0,,,FRF,"GBP 1","GBP",1,,1998-06-05,2002-02-28,3
+590,60,2333,GB2,DR5,"U.S. Dollars per 1 U.K. Sterling",1,,,USD,"GBP 1","GBP",1,,1975-01-02,2022-02-18,4
+590,55,2328,GB2,DRD,"Chinese Yuan per 1 U.K. Sterling",1,,,CNY,"GBP 1","GBP",1,,2013-08-05,2022-02-18,4
+590,39,2312,GB2,DRC,"Canadian Dollars per 1 U.K. Sterling",1,,,CAD,"GBP 1","GBP",1,,1998-06-05,2022-02-18,5
+590,50,2323,GB2,DR,"Finnish Marks per 1 U.K. Sterling",0,,,FIM,"GBP 1","GBP",1,,1998-06-15,1999-02-16,4
+590,45,2318,GB2,DR,"Italian Lira per 1 U.K. Sterling",0,,,ITL,"GBP 1","GBP",1,,1998-06-05,2002-02-28,1
+590,57,2330,GB2,DR0,"South African Rand per 1 U.K. Sterling",1,,,ZAR,"GBP 1","GBP",1,,1999-06-07,2022-02-18,4
+590,41,2314,GB2,DR4,"Danish Krones per 1 U.K. Sterling",1,,,DKK,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+590,52,2325,GB2,DRA,"Singapore Dollars per 1 U.K. Sterling",1,,,SGD,"GBP 1","GBP",1,,1999-06-07,2022-02-18,4
+590,47,2320,GB2,DR!,"Malaysian Ringits per 1 U.K. Sterling",1,,,MYR,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+590,42,2315,GB2,DR,"German Marks per 1 U.K. Sterling/",0,,,DEM,"GBP 1","GBP",1,,1998-06-05,2002-02-28,4
+590,59,2332,GB2,DR,"Austrian Schillings per 1 U.K. Sterling",0,,,ATS,"GBP 1","GBP",1,,1998-06-05,2002-02-28,3
+590,54,2327,GB2,DR,"Spanish Pesetas per 1 U.K. Sterling",0,,,ESP,"GBP 1","GBP",1,,1998-05-27,2005-05-02,2
+590,38,2311,GB2,DR,"South Korean Won per 1 U.K. Sterling",1,,,KRW,"GBP 1","GBP",1,,2015-01-26,2022-02-18,2
+590,49,2322,GB2,DR#,"Norwegian Kroners per 1 U.K. Sterling",1,,,NOK,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+590,44,2317,GB2,DR7,"Hong Kong Dollars per 1 U.K. Sterling",1,,,HKD,"GBP 1","GBP",1,,1998-06-05,2022-02-18,4
+591,46,2345,EU2,EU5,"Japanese Yen per 1 Euro",1,,,JPY,"EUR 1","EUR",1,,1999-01-04,2022-02-18,3
+591,37,2341,EU2,EU1,"Australian per 1 Euro",1,,,AUD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,56,2354,EU2,EU%,"Mexican Pesos per 1 Euro",1,,,MXN,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,49,2304,EU2,EU3,"Norwegian Kroners per 1 Euro",1,,,NOK,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,40,2343,EU2,EU,"Greek Drachmas per Euro",0,,,GRD,"EUR 1","EUR",1,,1999-03-18,2001-01-25,2
+591,58,2348,EU2,EU8,"Swedish Kronas per 1 Euro",1,,,SEK,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,52,2353,EU2,EU$,"Singapore Dollars per 1 Euro",1,,,SGD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,44,2350,EU2,EU!,"Hong Kong Dollars per 1 Euro",1,,,HKD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,55,2347,EU2,EU7,"U.K. Sterling  per 1 Euro",1,,,GBP,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,47,2351,EU2,EU@,"Malaysian Ringgits per 1 Euro",1,,,MYR,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,39,2342,EU2,EU2,"Canadian Dollars per 1 Euro",1,,,CAD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,57,2355,EU2,EU^,"South African Rand per 1 Euro",1,,,ZAR,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,51,2352,EU2,EU#,"New Zealand Dollars per 1 Euro",1,,,NZD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,41,2344,EU2,EU4,"Danish Krones per 1 Euro",1,,,DKK,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+591,60,2349,EU2,EU9,"U.S. Dollar per 1 Euro",1,,,USD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+591,53,2346,EU2,EU6,"Swiss Francs per 1 Euro",1,,,CHF,"EUR 1","EUR",1,,1999-01-04,2022-02-18,5
+690,38,3301,U2$,US4,"Bahraini Dollars per 1 U.S. Dollar",1,,,BHD,"USD 1","USD",1,,2002-01-24,2022-02-18,5
+690,60,3322,U2$,USO,"Latvian Lats per 1 U.S. Dollar",0,,,LAT,"USD 1","USD",1,,2004-04-20,2014-12-19,4
+690,55,3318,U2$,USK,"Isreali Shekels per 1 U.S. Dollar",1,,,ILS,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,50,3313,U2$,USF,"Saudi Riyal per 1 U.S. Dollar",1,,,SAR,"USD 1","USD",1,,2002-02-04,2022-02-18,4
+690,45,3308,U2$,USA,"Indian Rupees per 1 U.S. Dollar",1,,,INR,"USD 1","USD",1,,1973-01-02,2022-02-18,4
+690,40,3303,U2$,US6,"Chinese Yuan per 1 U.S. Dollar",1,,,CNY,"USD 1","USD",1,,1981-01-02,2022-02-18,4
+690,57,3320,U2$,USM,"Pakistan Rupees per 1 U.S. Dollar",1,,,PKR,"USD 1","USD",1,,2002-01-24,2022-02-18,3
+690,52,3315,U2$,USH,"Thai Baht per 1 U.S. Dollar",1,,,THB,"USD 1","USD",1,,1981-01-02,2022-02-18,3
+690,47,3310,U2$,US,"Portuguese Escudos per 1 U.S. Dollar",0,,,PTE,"USD 1","USD",1,,1973-01-02,2002-02-28,2
+690,42,3305,U2$,USC,"Euro per 1 U.S. Dollar",1,,,EUR,"USD 1","USD",1,,1999-01-04,2022-02-18,4
+690,37,3300,U2$,US3,"U.A.E. Dirhams per 1 U.S. Dollar",1,,,AED,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,59,2254,U2$,QE4,"Danish Krones per 1 U.S. Dollar",1,,,DKK,"USD 1","USD",1,,1971-01-04,2022-02-18,5
+690,54,3317,U2$,USJ,"Venezuelan Bolivars per 1 U.S. Dollar",1,1,10000,VES,"USD 1","VES/USD",1,1,2002-01-24,2022-02-18,4
+690,49,3312,U2$,USE,"Russian Rubles per 1 U.S. Dollar",1,,,RUB,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,44,3307,U2$,US0,"Indonesian Rupiahs per 1 U.S. Dollar",1,,,IDR,"USD 1","USD",1,,2002-01-24,2022-02-18,0
+690,39,3302,U2$,US5,"Brazilian Real per 1 U.S. Dollar",1,,,BRL,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,56,3319,U2$,USL,"Argentine Pesos per 1 U.S. Dollar",1,,,ARS,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,51,3314,U2$,USG,"Slovakian Korunas per 1 U.S. Dollar",0,,,SKK,"USD 1","USD",1,,2002-01-24,2014-12-19,4
+690,46,3309,U2$,USB,"Kuwaiti Dinars per 1 U.S. Dollar",1,,,KWD,"USD 1","USD",1,,2002-01-24,2022-02-18,5
+690,41,3304,U2$,US7,"Czech Korunas per 1 U.S. Dollar",1,,,CZK,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,58,3321,U2$,USN,"Peru Nuevo Sol per 1 U.S. Dollar",1,,,PEN,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,53,3316,U2$,USI,"Taiwan Dollars per 1 U.S. Dollar",1,,,TWD,"USD 1","USD",1,,1983-10-03,2022-02-18,3
+690,48,3311,U2$,USD,"Polish Zlotys per 1 U.S. Dollar",1,,,PLN,"USD 1","USD",1,,2002-01-24,2022-02-18,4
+690,43,3306,U2$,US9,"Hungarian Forints per 1 U.S. Dollar",1,,,HUF,"USD 1","USD",1,,2002-01-24,2022-02-18,3
+691,60,3347,EU$,EUV,"Latvian Lats per 1 Euro",0,,,LAT,"EUR 1","EUR",1,,2004-04-20,2013-12-31,4
+691,41,3328,EU$,EUE,"Czech Korunas per 1 Euro",1,,,CZK,"EUR 1","EUR",1,,1999-01-04,2022-02-18,3
+691,54,3341,EU$,EUR,"Venezuelan Bolivar per 1 Euro",1,1,10000,VES,"EUR 1","VES/EUR",1,1,1999-02-09,2022-02-18,4
+691,49,3336,EU$,EUM,"Russian Rubles per 1 Euro",1,,,RUB,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,43,3330,EU$,EUG,"Hungarian Forints per 1 Euro",1,,,HUF,"EUR 1","EUR",1,,1999-01-04,2022-02-18,3
+691,57,3344,EU$,EU,"Pakistan Rupees per 1 Euro",0,,,PKR,"EUR 1","EUR",1,,2002-01-24,2002-04-26,3
+691,38,3325,EU$,EUB,"Bahraini Dollar per 1 Euro",1,,,BHD,"EUR 1","EUR",1,,1999-02-11,2022-02-18,4
+691,51,3338,EU$,EUO,"Slovakian Korunas per 1 Euro",0,,,SKK,"EUR 1","EUR",1,,2002-01-24,2013-07-26,4
+691,45,3332,EU$,EUI,"Indian Rupees per 1 Euro",1,,,INR,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,59,3346,EU$,EUW,"Korean Won per 1 Euro",1,,,KRW,"EUR 1","KRW/EUR",10,,1999-01-04,2022-02-18,2
+691,40,3327,EU$,EUD,"Chinese Yuan per 1 Euro",1,,,CNY,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,53,3340,EU$,EUQ,"Taiwan Dollar per 1 Euro",1,,,TWD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,48,3335,EU$,EUL,"Polish Zlotys per 1 Euro",1,,,PLN,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,55,3342,EU$,EU,"Isreali Shrekel per 1 Euro",0,,,ILS,"EUR 1","EUR",1,,2002-01-24,2002-04-26,4
+691,37,3324,EU$,EUA,"U.A.E Dirham per 1 Euro",1,,,AED,"EUR 1","EUR",1,,1999-02-11,2022-02-18,4
+691,50,3337,EU$,EUN,"Saudi Riyals per 1 Euro",1,,,SAR,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,44,3331,EU$,EUH,"Indonesian Rupiahs per 1 Euro",1,,,IDR,"EUR 1","EUR",1,,1999-01-04,2022-02-18,2
+691,58,3345,EU$,EU,"Peru Nuevo Sol per 1 Euro",0,,,PEN,"EUR 1","EUR",1,,2002-01-24,2002-04-26,3
+691,39,3326,EU$,EU,"Brazilian Real per 1 Euro",1,,,BRL,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,52,3339,EU$,EUP,"Thai Baht per 1 Euro",1,,,THB,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+691,46,3333,EU$,EUJ,"Kuwaiti Dinars per 1 Euro",1,,,KWD,"EUR 1","EUR",1,,1999-01-04,2022-02-18,4
+775,44,3508,JPY,JPYX5,"Hong Kong Dollars per 1 Japanese Yen",1,,,HKD,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,57,3521,JPY,JPYXI,"Japanese Yen per 1 South African Rand",1,,,JPY,"JPY 1","ZAR",,,2004-04-20,2022-02-18,4
+775,48,3512,JPY,JPYX9,"Polish Zlotys per 1 Japanese Yen",1,,,PLN,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,40,3504,JPY,JPYX1,"Chinese Yuan Renminbis per 1 Japanese Yen",1,,,CNY,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,51,3515,JPY,JPYXC,"New Zealand Dollars per 1 Japanese Yen",1,,,NZD,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,43,3507,JPY,JPYX4,"Hungarian Forints per 1 Japanese Yen",1,,,HUF,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,53,3517,JPY,JPYXE,"Swiss Francs per 1 Japanese Yen",1,,,CHF,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,47,3511,JPY,JPYX8,"Malaysian Ringgits per 1 Japanese Yen",1,,,MYR,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,39,3503,JPY,JPYX0,"Canadian Dollars to 1 Japanese Yen",1,,,CAD,"JPY 1","JPY",,,2004-04-20,2022-02-18,7
+775,58,3522,JPY,JPYXJ,"Swedish Kronas per 1 Japanese Yen",1,,,SEK,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,49,3513,JPY,JPYXA,"Norwegian Kroners per 1 Japanese Yen",1,,,NOK,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,41,3505,JPY,JPYX2,"Danish Krones per 1 Japanese Yen",1,,,DKK,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+775,52,3516,JPY,JPYXD,"Singapore Dollars to 1 Japanese Yen",1,,,SGD,"JPY 1","JPY",,,2004-04-20,2022-02-18,6
+776,58,3544,CHF,CHFXJ,"Swedish Kronas per 1 Swiss Franc",1,,,SEK,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,48,3534,CHF,CHFX9,"Polish Zlotys per 1 Swiss Franc",1,,,PLN,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,51,3537,CHF,CHFXC,"New Zealand Dollars per 1 Swiss Franc",1,,,NZD,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,39,3525,CHF,CHFX0,"Canadian Dollars per 1 Swiss Franc",1,,,CAD,"CHF 1","CHF",,,2004-04-20,2022-02-18,5
+776,43,3529,CHF,CHFX4,"Hungarian Forint per 1 Swiss Franc",1,,,HUF,"CHF 1","CHF",,,2004-04-20,2022-02-18,3
+776,53,3539,CHF,CHFXE,"Thai Bahts per 1 Swiss Franc",1,,,THB,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,41,3527,CHF,CHFX2,"Danish Krones per 1 Swiss Franc",1,,,DKK,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,47,3533,CHF,CHFX8,"Malaysian Ringgits per 1 Swiss Franc",1,,,MYR,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,49,3535,CHF,CHFXA,"Norwegian Kroners per 1 Swiss Franc",1,,,NOK,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,52,3538,CHF,CHFXD,"Singapore Dollars per 1 Swiss Franc",1,,,SGD,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,40,3526,CHF,CHFX1,"Chinese Yuan Renminbis per 1 Swiss Franc",1,,,CNY,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+776,44,3530,CHF,CHFX5,"Hong Kong Dollars per 1 Swiss Franc",1,,,HKD,"CHF 1","CHF",,,2004-04-20,2022-02-18,4
+985,56,3559,FX1,INRU,"Indian Rupees per 1 U.K. Sterling",1,,,INR,"1 GBP","GBP",1,,2017-07-12,2022-02-18,4
+985,51,3552,FX1,USD8,"Cypriot Pounds per 1 Euro",0,,,CYP,"EUR 1","EUR",1,,2005-12-14,2013-07-26,4
+985,43,3549,FX1,USD5,"Lithuanian Litas per 1 U.S. Dollar",1,,,LTL,"USD 1","USD",1,,2005-12-14,2022-02-18,4
+985,58,3561,FX1,TRYG,"Turkish Lira per 1 U.K. Sterling",1,,,TRY,"1 GBP","GBP",1,,2017-07-12,2022-02-18,5
+985,53,3556,FX1,SEK5,"Swedish Krona per 1 Norwegian Krone",1,,,SEK,"1 NOK","NOK",1,,1997-08-18,2022-02-18,4
+985,45,3551,FX1,USD7,"Estonian Kroons per 1 U.S. Dollar",0,,,EEK,"USD 1","USD",1,,2005-12-14,2014-12-19,4
+985,40,3546,FX1,USD2,"Chilean Pesos per 1 U.S. Dollar",1,,,CLP,"USD 1","USD",1,,1990-11-19,2022-02-18,2
+985,55,3558,FX1,CNHU,"Chinese Yuan (Off-shore) per 1 US Dollar",1,,,CNH,"1 USD","USD",1,,2005-09-26,2022-02-18,4
+985,47,3554,FX1,BPBR,"Brazilian Real per 1 British Pound",1,,,BRL,"1 GBP","GBP",1,,1995-01-02,2022-02-18,4
+985,42,3548,FX1,USD4,"Columbian Pesos per 1 U.S. Dollar",1,,,COP,"USD 1","USD",1,,1989-11-08,2022-02-18,2
+985,57,3560,FX1,RUBG,"Russian Rubles per 1 U.K. Sterling",1,,,RUB,"1 GBP","GBP",1,,2017-07-12,2022-02-18,4
+985,52,3555,FX1,CAD9,"Canadian Dollar per 1 New Zealand Dollar",1,,,CAD,"1 NZD","NZD",1,,2002-03-25,2022-02-18,5
+985,44,3550,FX1,USD6,"Slovenian Tolars per 1 U.S. Dollar",0,,,SIT,"USD 1","USD",1,,2005-12-14,2014-12-19,2
+985,39,3545,FX1,USD1,"Turkish Lira per 1 U.S. Dollar",1,,,TRY,"USD 1","USD",,,2001-04-02,2022-02-18,4
+985,59,3574,FX1,CADH,"Hong Kong dollar per 1 Canadian Dollar",1,0.0001,1,HKD,"CAD 1","HKD/CAD",1,0.0001,1982-01-05,2022-02-18,4
+985,54,3557,FX1,EURT,"Euro per 1 Turkish Lira",1,,,EUR,"1 TRY","TRY",1,,1999-01-04,2022-02-18,5
+985,46,3553,FX1,USD9,"Chinese Yuan per 1 Hong Kong Dollar",1,,,CNY,"1 HKD","HKD",1,,2013-08-05,2022-02-18,5
+985,41,3547,FX1,USD3,"Philipine Pesos per 1 U.S. Dollar",1,,,PHP,"USD 1","USD",1,,1992-05-18,2022-02-18,3

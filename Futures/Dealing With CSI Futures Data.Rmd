@@ -34,33 +34,22 @@ CSI data is a great supplier of Futures data, but the user interface seems stuck
 #### Get Futures Data ####
 #List files
 csvFolder='D:/RESEARCH/DATA/CSI'
-meta=readxl::read_xlsx('D:/Trading/AUTO/ASSETS.xlsx')%>%
-  filter(secType=='FUT')
+meta=readxl::read_xlsx('D:/Trading/AUTO/ASSETS.xlsx')
 
-kable(meta)
 
-rgx=paste0("(",paste(meta$symbol,collapse="|"),")");rgx
-
+rgx=paste0("(",paste(meta$symbol[meta$group=='futures'],collapse="|"),")");rgx
 files.all=list.files(csvFolder,pattern=rgx,recursive = T,ignore.case = T,full.names = T)
-
 files.backadjusted=list.files(csvFolder,pattern=paste0(rgx,'\\_B.CSV'),recursive = T,ignore.case = T,full.names = T)
-
-
-files.spot=c(
-  list.files(csvFolder,pattern=paste0(rgx,'*\\$\\.CSV$'),recursive = T,ignore.case = T,full.names = T),
-          list.files(csvFolder,pattern=paste0(rgx,'*spot\\.CSV$'),recursive = T,ignore.case = T,full.names = T))
-
 files.fut=setdiff(files.all,files.backadjusted)
 
 
-```
+rgx=paste0("(",paste(meta$symbol[meta$group=='FX'],collapse="|"),")")
+rgx=gsub('}','\\}',gsub('{','\\{',rgx,fixed=T),fixed=T);rgx
+files.fx=list.files(csvFolder,pattern=rgx, recursive=T,ignore.case=T,full.names=T)
 
-```{r Spot check data,echo=T}
-
-sample=data.frame(fread(files.fut[2]))
-head(sample)
 
 ```
+
 
 The data for this example market looks OK. Let's get all the data!
 
@@ -79,6 +68,15 @@ CSI=bind_rows(pblapply(1:length(files.fut),function(i){
 }))
 names(CSI)=tolower(names(CSI))
 CSI=data.frame(CSI)
+
+symbols=gsub('_','',substr(basename(files.fx),1,3))
+
+FX=bind_rows(pblapply(1:length(files.fx),function(i){
+    fread(files.fut[i])%>%
+    mutate(Date=as_date(Date))%>%
+    mutate(Symbol=symbols[i])
+} ))%>%select(Date,Open,High,Low,Close,Symbol)
+names(FX)=tolower(names(FX))
 ```
 
 OK we have a lot of data: `r nrow(FUT)` rows.
@@ -101,66 +99,36 @@ FUT=CSI%>%
   mutate(expirydate=if_else(type=='spot',as_date(NA),expirydate))%>%
   group_by(date,symbol)%>%
     mutate(dte=as.double(difftime(expirydate,date,units='days')))%>%
+  ungroup()%>%
+  ###Back-Adjusting routine
+  group_by(symbol,delivery)%>%
+    arrange(date)%>%
+    mutate(
+      lagOI=lag(oi),
+      lagExpiry=lag(expirydate),
+      lag2OI=lag(oi,2),
+      lag2Expiry=lag(expirydate,2),
+      delta=close-lag(close),
+      c2c=close/lag(close)-1,
+      c2o=open/lag(close)-1,
+      o2c=close/open-1,
+      #fxret=fx/lag(fx)-1,
+      logret=log(close/lag(close)),
+      c2c.p=close-lag(close),
+      c2o.p=open-lag(close),
+      o2c.p=close-open
+      )%>%
+    mutate(vola=100*16*roll_sd(logret,30))%>%
   ungroup()
-
-
-  # ungroup()%>%
-  # group_by(date,symbol)%>%
-  #   mutate(daystoexpiry= interval(date,expirydate) %/% days(1) )%>%
-  #   arrange(daystoexpiry)%>%
-  # ungroup()
-    
-  # ###Back-Adjusting routine
-  # group_by(symbol,delivery)%>%
-  #   arrange(date)%>%
-  #   mutate(
-  #     lagOI=lag(oi),
-  #     lagExpiry=lag(expirydate),
-  #     lag2OI=lag(oi,2),
-  #     lag2Expiry=lag(expirydate,2),
-  #     delta=close-lag(close),
-  #     c2c=close/lag(close)-1,  #NOTE THE FX TERM
-  #     c2o=open/lag(close)-1,
-  #     o2c=close/open-1,
-  #     #fxret=fx/lag(fx)-1,
-  #     logret=log(close/lag(close)),
-  #     c2c.p=close-lag(close),
-  #     c2o.p=open-lag(close),
-  #     o2c.p=close-open
-  #     )%>%
-  #   na.omit()%>%
-  #   mutate(
-  #     vola=100*16*roll_sd(logret,30))%>%
-  #   na.omit()%>%
-  # ungroup()
 
 
 ```
 
+
+
 ## Computing Carry
 
 ```{r Calculating Carry, echo=T}
-
-ref_days=50
-CARRY.50D=FUT%>%
-  #filter(type=='spot' | (type=='fut' & oi>0))%>%
-  mutate(refdays=ref_days)%>%
-  group_by(symbol,date)%>%
-    mutate(rank.above=row_number(ifelse(dte-refdays<0,NA,dte-refdays)) )%>%
-    mutate(rank.below=row_number(ifelse(refdays-dte<=0,NA,refdays-dte)) )%>%
-    filter(type=='spot' | rank.above==1 | rank.below==1 )%>%
-    arrange(expirydate)%>%
-    mutate(C=paste0(row_number()))%>%
-  ungroup()%>%
-  select(symbol,name,date,C,close,dte,expirydate,oi,refdays)%>%
-  pivot_wider(names_from = C,values_from=c(dte,close,expirydate,oi))%>%
-  select(-c(dte_3,expirydate_3))%>%
-  na.omit()%>%
-  arrange(symbol,date)%>%
-  mutate(close_s=(close_2-close_1)/(dte_2-dte_1)*(refdays-dte_1)+close_1)%>%
-  #Compute carry as expected return
-  mutate(carry=close_s-close_3)%>%
-  mutate(spread=close_2-close_1)
 
 ref_days=100
 CARRY.100D=FUT%>%
@@ -184,7 +152,7 @@ CARRY.100D=FUT%>%
   mutate(spread=close_1-close_2)
 
 CARRY.100D%>%distinct(symbol)
-bind_rows(CARRY.100D)%>%filter(date>'2000-12-01')%>%filter(symbol=='NG2')%>%ggplot(aes(x=date,y=carry,color=refdays))+geom_step(size=1)+ggtitle('Bitcoin',subtitle = 'Carry')
+bind_rows(CARRY.100D)%>%filter(date>'2000-12-01')%>%filter(symbol=='S2')%>%ggplot(aes(x=date,y=carry))+geom_step(size=1)+ggtitle('Soybeans',subtitle = 'Carry expected return')+theme_bw()
 
 ```
 
@@ -192,8 +160,7 @@ bind_rows(CARRY.100D)%>%filter(date>'2000-12-01')%>%filter(symbol=='NG2')%>%ggpl
 
 ```{r Constructing Continuous Contracts, echo=T}
 
-
-
+#Next contract
 FUT.NEXT=FUT%>%
   group_by(date,symbol)%>%
     filter(oi==max(oi))%>%
@@ -201,6 +168,7 @@ FUT.NEXT=FUT%>%
   ungroup()%>%
   select(date,symbol,nextdelivery=delivery,nextOI=oi)
 
+#Previous contract
 FUT.PREV=FUT%>%
   group_by(date,symbol)%>%
     #Pick the contract with the highest OI or
@@ -208,8 +176,6 @@ FUT.PREV=FUT%>%
   filter( n()==1 | (n()>1 & lag2Expiry==max(lag2Expiry)))%>%
   ungroup()%>%
   select(date,symbol,prevdelivery=delivery,prevOI=oi,prevC2O=c2o)
-
-
 
 FUT.BA=FUT%>%
   group_by(date,symbol)%>%
@@ -229,15 +195,10 @@ FUT.BA=FUT%>%
   ungroup()%>%
   mutate(type='FUT')
 
-
-
-FUT.BA%>%
-  group_by(symbol,date)%>%
-  summarize(N=n())%>%
-  filter(N>1)
-
 ```
 
-```{python prueba}
-import pandas as pd
+```{r QC}
+FUT.BA%>%
+  filter(symbol=='CL2')%>%
+  ggplot(aes(x=date,y=vami,color=symbol))+theme_bw()+geom_step(size=1)
 ```
