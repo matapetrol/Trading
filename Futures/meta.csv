@@ -1,0 +1,126 @@
+symbol,name,exchange,fullpointvalue,currency,contractsize,units,minimumtick,multiplier
+LC,Live Cattle,CME,400,USD,40000 lbs,cents/lb,2.5,0.01
+LH,Lean Hogs,CME,400,USD,40000 lbs,cents/lb,2.5,0.01
+MP,Mexican Peso,CME,5e+05,USD,MXN 500000,USD/MXN,1,1
+BP,British Pound,CME,62500,USD,GBP 62500,USD/GBP,1,1
+LB,Lumber,CME,110,USD,110000 board ft,USD/1000 board ft,1,1
+GC,Gold,COMEX,100,USD,100 oz troy,USD/oz troy,1,1
+FC,Feeder Cattle,CME,500,USD,50000 lbs,cents/lb,2.5,0.01
+RS,Rapeseed(Canola),ICE-US,20,CAD,20 tonnes,CAD/tonne,1,1
+AD,Australian Dollar,CME,1e+05,USD,AUD100000,USD/AUD,5,1
+FDX,DAX Index,EUREX,25,EUR,EUR 25 x Index,points,10,1
+LGO,Low Sulphur Gasoil,ICE-EU,100,USD,100 tonnes,USD/tonne,25,1
+LCO,Brent Crude,ICE-EU,1000,USD,1000 barrels,USD/barrel,1,1
+ED,Eurodollar,CME,2500,USD,$1000000,USD/bas pt,2.5,1
+TY,10-Year U.S. T-Note,CBT,1000,USD,$100000,points,1,1
+FSS,3 Month Sterling,ICE-EU-FIN,1250,GBP,GBP 500000,GBP/bas pt,5,1
+FLG,Long Gilt,ICE-EU-FIN,1000,GBP,GBP100000,percent,1,1
+FES,Three Month Euro Swiss Franc (Euroswiss),ICE-EU-FIN,2500,CHF,CHF 1000000,CHF/bas pt,5,1
+LSU,White Sugar (#5),ICE-EU-AGS,50,USD,50 tonnes,USD/tonne,1,1
+FV,5-Year U.S. T-Note,CBT,1000,USD,$100000,points,2.5,1
+NBB,90 Day New Zealand Bank Bills,ASX,2400,NZD,NZD 1000000,NZD/bas pt,1,1
+KPO,Crude Palm Oil,MDEX,25,MYR,25 tonnes,MYR/tonne,1,1
+SJB,mini 10-Year Japanese Govt Bond,SGX,1e+05,JPY,JPY 10000000,percent,1,1
+BR,Brazilian Real (legacy version; moved to #821),CME,1e+05,USD,BRL 100000,USD/BRL,1,1
+COM,Rapeseed,EURONEXT-PARIS,50,EUR,50 metric tons,EUR/tonne,2.5,1
+DA,Class III Milk,CME,2000,USD,200000 lbs.,USD/CWT,1,1
+S2,Soybeans,CBT,50,USD,5000bu,cents/bu,2,0.01
+SM2,Soybean Meal,CBT,100,USD,100 short tons,USD/short ton,1,1
+BO2,Soybean Oil,CBT,600,USD,60000lb,cents/lb,1,0.01
+C2,Corn,CBT,50,USD,5000 bu,cents/bu,2,0.01
+W2,Wheat,CBT,50,USD,5000 bu,cents/bu,2,0.01
+O2,Oats,CBT,50,USD,5000 bu,cents/bu,2,0.01
+RR2,Rough Rice,CBT,2000,USD,2000CWT,USD/CWT,5,1
+RP,Euro/British Pound,CME,125000,GBP,EUR125000,GBP/EUR,5,1
+RY,Euro/Japanese Yen,CME,125000,JPY,EUR125000,JPY/EUR,1,1
+RF,Euro/Swiss Franc,CME,125000,CHF,EUR125000,CHF/EUR,1,1
+STF,SICOM TSR20 Rubber,SGX,50,USD,5000 kg,USD 0.01/kg,10,1
+BL2,Milling Wheat,EURONEXT-PARIS,50,EUR,50 tonnes,EUR/tonne,25,1
+CU,Euro,CME,125000,USD,EUR 125000,USD/EUR,5,1
+SSG,MSCI Singapore Stock Index,SGX,100,SGD,SGD 100 x Index,points,5,1
+EBX,Euro Buxl (4%),EUREX,1000,EUR,EUR 100000,points,2,1
+EBL,Euro German Bund,EUREX,1000,EUR,EUR100000,percent,1,1
+EBM,Euro German Bobl,EUREX,1000,EUR,EUR100000,percent,10,1
+EBS,Euro German Schatz,EUREX,1000,EUR,EUR100000,percent,5,1
+FEI,3-Month EURIBOR,ICE-EU-FIN,2500,EUR,EUR 1000000,EUR/basis point,5,1
+EMA,Corn,EURONEXT-PARIS,50,EUR,50 metric tons,EUR/metric ton,25,1
+KRW,US Dollar/Korean Won-KRX,KRX,10000,KRW,USD 10000,KRW / USD,1,1
+KTB,3-year Korea Treasury Bond -KRX,KRX,1e+06,KRW,KRW100000000,percent,1,1
+YT2,3-Year Australian Govt Bond (6%),ASX,2800,AUD,AUD 100000,percent,1,1
+SIN,S&P CNX Nifty Index,SGX,2,USD,$2 x Index,points,5,1
+FBS,2-Year Euro Swapnote,ICE-EU-FIN,1000,EUR,EUR 100000,percent,5,1
+ER2,e-mini Russell 2000 Index,CME,50,USD,$50 x Index,points,10,1
+QG,e-mini Henry Hub Natural Gas,NYMEX,2500,USD,2500 mmBtu,$/mmBtu,5,1
+ZB,Treasury Bonds,CBT,1000,USD,$100000,Points,5,1
+ZN,T-Note-US 10 Yr,CBT,1000,USD,$100000,points,1,1
+ZF,5-Year U.S. T-Note,CBT,1000,USD,$100000,points,2.5,1
+HG2,Copper,COMEX,250,USD,25000 lbs,cents/lb,5,0.01
+LRC,Robusta Coffee,ICE-EU-AGS,10,USD,10 tonne,USD/tonne,1,1
+OQ,Crude Oil Oman,DME,1000,USD,1000 barrels,USD/barrel,1,1
+PA2,Palladium,NYMEX,100,USD,100 oz troy,$/troy oz,50,1
+CL2,Crude Oil,NYMEX,1000,USD,1000 barrels,USD/barrel,1,1
+HO2,NY Harbor ULSD,NYMEX,42000,USD,42000 gallons,USD/gallon,1,1
+PL2,Platinum,NYMEX,50,USD,50 oz troy,USD/troy oz,1,1
+SI2,Silver,COMEX,50,USD,5000 oz troy,cents/troy oz,1,0.01
+NG2,Henry Hub Natural Gas,NYMEX,10000,USD,10000 mmBtu,USD/mmBtu,1,1
+VX,CBOE Volatility Index (VIX),CFE,1000,USD,$1000 x Index,points,100,1
+RB2,Gasoline-Reformulated Blendstock,NYMEX,42000,USD,42000 gallons,USD/gallon,1,1
+CFI,ECX EUA Emissions,ICE-EU,1000,EUR,1000 tonnes,EUR/tonne,1,1
+RA,SA Rand,CME,5e+05,USD,500000 ZAR,USD/ZAR,2.5,1
+NE,New Zealand Dollar,CME,1e+05,USD,100000 NZD,$/NZD,5,1
+MXM,mini Ibex 35 Index,MEFF,1,EUR,EUR 1 x index,points,50,1
+REI,DJ Real Estate Index,CBT,100,USD,$100 x Index,points,10,1
+SB2,Sugar #11,ICE-US,1120,USD,112000 lbs,cents/pound,1,0.01
+CT2,Cotton #2,ICE-US,500,USD,50000 lbs,cents/pound,1,0.01
+KC2,Coffee,ICE-US,375,USD,37500 lbs,cents/pound,5,0.01
+CC2,Cocoa,ICE-US,10,USD,10 tonnes,USD/tonne,1,1
+OJ2,Frozen Orange Juice,ICE-US,150,USD,15000 lbs,cents/pound,5,0.01
+RC,API2 Rotterdam Coal Monthly,ICE-EU,1000,USD,1000 tonnes,USD/tonne,5,1
+XW2,mini Wheat,CBT,10,USD,1000 bushels,cents/bushel,1,0.01
+XC2,mini Corn,CBT,10,USD,1000 bushels,cents/bushel,1,0.01
+XS2,mini Soybeans,CBT,10,USD,1000 bushels,cents/bushel,1,0.01
+DX2,U.S. Dollar Index,ICE-US,1000,USD,$1000 x Index,points,5,1
+DPO,Palm Oil,DCE,10,CNY,10 metric tons,CNY/tonne,2,1
+JTM,mini TOPIX Index,OSE,1000,JPY,JPY 1000 x Index,points,25,1
+CTA,PTA (Pure Terephthalic Acid),ZCE,5,CNY,5 tonnes,CNY/tonne,2,1
+M6B,e-micro GBP / USD,CME,6250,USD,GBP 6250,USD / GBP,1,1
+M6E,e-micro EUR/USD,CME,12500,USD,EUR 12500,USD / EUR,10,1
+M6A,e-micro AUD/USD,CME,10000,USD,AUD 10000,USD / AUD,1,1
+M6J,e-micro USD / JPY,CME,10000,JPY,USD 10000,JPY / USD,1,1
+M6C,e-micro USD / CAD,CME,10000,CAD,USD 10000,CAD / USD,1,1
+M6S,e-micro USD / CHF,CME,10000,CHF,USD 10000,CHF / USD,1,1
+JP4,mini Platinum,OSE,100,JPY,100g,JPY/gram,1,1
+BTP,Long-Term Italian Govt Bond-BTP,EUREX,1000,EUR,EUR 100000,points,1,1
+FVS,VSTOXX Mini,EUREX,100,EUR,EUR 100 x Index,Points,5,1
+TTM,Dutch TTF Gas M,ICE-EU,1000,EUR,1MWh/day,EUR/MWh,25,1
+MEM,mini MSCI Emerging Markets Index,ICE-US,50,USD,USD 50 x Index,points,100,1
+CSC,Cash Settled Cheese,CME,20000,USD,20000 pounds,$/pound,1,1
+MGC,E-Micro Gold,COMEX,10,USD,10 troy ounce,US Dollar/troy ounce,1,1
+A50,China A50 Index,SGX,1,USD,$1 x Index,points,1,1
+CTC,Thermal Coal,ZCE,100,CNY,100 metric tons,CNY/metric ton,2,1
+FOA,Euro-OAT (10yr),EUREX,1000,EUR,EUR 100000,Percent,1,1
+FXP,STOXX Europe 600 Index,EUREX,50,EUR,EUR 50 x Index,points,1,1
+MJY,E-Micro JPY / USD,CME,1250000,USD,JPY1250000,USD / JPY,5,1
+FSM,E-Micro CHF / USD,CME,12500,USD,CHF 12500,USD / CHF,1,1
+MCD,E-Micro CAD / USD,CME,10000,USD,CAD 10000,USD / CAD,5,1
+MIR,E-Micro INR / USD,CME,100,USD,INR 1000000,US cents / INR 100,1,0.01
+DMJ,Coking Coal,DCE,60,CNY,60 metric tons,CNY/metric ton,5,1
+SEF,TSI Iron Ore CFR China (62% Fe Fines) Index,SGX,100,USD,100 tonnes,USD/tonne,1,1
+SIU,INR/USD,SGX,200,USD,INR2000000,US cents/100 Rupees,10,0.01
+HS2,Mini Hang Seng Index,HKEX,10,HKD,HKD10 x Index,points,1,1
+DIO,Iron Ore,DCE,100,CNY,100 metric ton,CNY/metric ton,5,1
+CCO,Medium Sour Crude,SHFE,1000,CNY,1000 oil barrel,CNY/oil barrel,10,1
+CBC,Bonded Copper,SHFE,5,CNY,5 tonnes,CNY/tonne,10,1
+FNG,micro NYSE FANG+ Index,ICE-US,5,USD,USD 5 x Index,points,20,1
+BTC,Bitcoin,CME,5,USD,5 Bitcoin,USD/Bitcoin,500,1
+MES,Micro E-mini S&P 500 Index,CME,5,USD,USD 5 x Index,points,25,1
+MNQ,Micro E-mini Nasdaq 100 Index,CME,2,USD,USD 2 x Index,points,25,1
+MYM,Micro E-mini Dow Jones Industrial Average Index,CBT,0.5,USD,USD 0.50 x Index,points,1,1
+MBT,micro Bitcoin,CME,0.1,USD,0.1 bitcoin,USD/bitcoin,5,1
+MCL,micro WTI Crude Oil,NYMEX,100,USD,100 barrels,USD/barrel,1,1
+CNR,TSR 20 Rubber,SHFE,10,CNY,10 tonnes,CNY/tonne,5,1
+CPG,Liquid Petroleum Gas,DCE,20,CNY,20 tonnes,CNY/tonne,1,1
+CLU,Low Sulfur Fuel Oil,SHFE,10,CNY,10 tonnes,CNY/tonne,1,1
+TAI,FTSE Taiwan Index,SGX,40,USD,USD 40 x Index,points,25,1
+KMD,mini KRW/USD,SGX,25000,USD,25000000 KRW,USD/1000 KRW,10,1
+MET,Micro Ether,CME,0.1,USD,USD 0.1 x Index,points,50,1

@@ -1,0 +1,36 @@
+"","epic","instrumentName","instrumentType","expiry","bid","offer","A","B","FUT","D","E","type","currency","contractSizePerPoint"
+"1","CO.D.BO.FWM4.IP","Soybean Oil ($3)","COMMODITIES","MAY-22",7594,7604,"CO","D","BO","FWM4","IP","M","$",3
+"2","CO.D.C.FWM2.IP","Corn ($25)","COMMODITIES","MAY-22",725.4,726.4,"CO","D","C","FWM2","IP","M","$",25
+"3","CO.D.CC.FWM1.IP","New York Cocoa ($5)","COMMODITIES","MAY-22",2523,2532,"CO","D","CC","FWM1","IP","M","$",5
+"4","CO.D.CFI.FWM1.IP","Carbon Emissions (€5)","COMMODITIES","DEC-22",7074,7087,"CO","D","CFI","FWM1","IP","M","€",5
+"5","EN.D.CL.FWM2.IP","Oil - US Crude ($5)","COMMODITIES","APR-22",10555.5,10561.5,"EN","D","CL","FWM2","IP","M","$",5
+"6","EN.D.CL.FWM1.IP","Oil - US Crude ($5)","COMMODITIES","MAY-22",10187,10193,"EN","D","CL","FWM1","IP","M","$",5
+"7","CO.D.CT.FWM2.IP","NY Cotton ($2.50)","COMMODITIES","MAY-22",12256.5,12285.5,"CO","D","CT","FWM2","IP","M","$",2.5
+"8","MT.D.HG.FWM1.IP","High Grade Copper ($0.50)","COMMODITIES","MAY-22",45785,45825,"MT","D","HG","FWM1","IP","M","$",0.5
+"9","MT.D.HG.FWM1.IP","High Grade Copper ($0.50)","COMMODITIES","MAY-22",45787.5,45827.5,"MT","D","HG","FWM1","IP","M","$",0.5
+"10","EN.D.HO.FWM1.IP","Heating Oil ($2.10)","COMMODITIES","APR-22",31931,31961,"EN","D","HO","FWM1","IP","M","$",2.1
+"11","EN.D.ICENG.FWS5.IP","UK Natural Gas (£1)","COMMODITIES","APR-22",2994,3006,"EN","D","ICENG","FWS5","IP","S","£",1
+"12","CO.D.KC.FWM2.IP","Coffee Arabica ($1.88)","COMMODITIES","MAY-22",23565,23610,"CO","D","KC","FWM2","IP","M","$",1.88
+"13","CO.D.LB.FWM1.IP","Lumber ($0.55)","COMMODITIES","MAY-22",122280,123080,"CO","D","LB","FWM1","IP","M","$",0.55
+"14","CO.D.LC.FWM1.IP","Live Cattle ($2)","COMMODITIES","APR-22",14103.8,14123.8,"CO","D","LC","FWM1","IP","M","$",2
+"15","CO.D.LCC.FWM2.IP","London Cocoa (£2)","COMMODITIES","MAR-22",1656,1661,"CO","D","LCC","FWM2","IP","M","£",2
+"16","CO.D.LCC.FWM4.IP","London Cocoa (£2)","COMMODITIES","MAY-22",1692,1697,"CO","D","LCC","FWM4","IP","M","£",2
+"17","EN.D.LCO.FWM6.IP","Oil - Brent Crude ($5)","COMMODITIES","MAY-22",10670,10678,"EN","D","LCO","FWM6","IP","M","$",5
+"18","EN.D.LCO.FWM2.IP","Oil - Brent Crude ($5)","COMMODITIES","JUN-22",10239,10247,"EN","D","LCO","FWM2","IP","M","$",5
+"19","EN.D.LGO.FWM2.IP","London Gas Oil ($50)","COMMODITIES","MAR-22",971.3,972.8,"EN","D","LGO","FWM2","IP","M","$",50
+"20","CO.D.LH.FWM1.IP","Lean Hogs ($2)","COMMODITIES","APR-22",10555,10570,"CO","D","LH","FWM1","IP","M","$",2
+"21","CO.D.LKD.FWM2.IP","Coffee Robusta ($2)","COMMODITIES","MAY-22",2082,2087,"CO","D","LKD","FWM2","IP","M","$",2
+"22","CO.D.LSU.FWM4.IP","London Sugar No. 5 ($10)","COMMODITIES","MAY-22",507.9,509,"CO","D","LSU","FWM4","IP","M","$",10
+"23","CO.D.LWB.FWM3.IP","London Wheat (£20)","COMMODITIES","MAY-22",261.75,263,"CO","D","LWB","FWM3","IP","M","£",20
+"24","EN.D.NG.FWM1.IP","Natural Gas ($2.50)","COMMODITIES","APR-22",4571,4581,"EN","D","NG","FWM1","IP","M","$",2.5
+"25","EN.D.NG.FWM2.IP","Natural Gas ($2.50)","COMMODITIES","MAY-22",4594,4604,"EN","D","NG","FWM2","IP","M","$",2.5
+"26","CO.D.O.FWM2.IP","Oats ($25)","COMMODITIES","MAY-22",671,678.5,"CO","D","O","FWM2","IP","M","$",25
+"27","CO.D.OJ.FWM1.IP","NY Orange Juice ($0.75)","COMMODITIES","MAY-22",14050,14105,"CO","D","OJ","FWM1","IP","M","$",0.75
+"28","MT.D.PA.FWM2.IP","Palladium ($20)","COMMODITIES","JUN-22",2598,2608,"MT","D","PA","FWM2","IP","M","$",20
+"29","MT.D.PL.FWM1.IP","Platinum ($10)","COMMODITIES","APR-22",1053.4,1055.9,"MT","D","PL","FWM1","IP","M","$",10
+"30","EN.D.RB.FWM2.IP","No Lead Gasoline ($2.10)","COMMODITIES","APR-22",31416,31446,"EN","D","RB","FWM2","IP","M","$",2.1
+"31","CO.D.RR.FWM1.IP","Rough Rice ($1)","COMMODITIES","MAY-22",16117.5,16157.5,"CO","D","RR","FWM1","IP","M","$",1
+"32","CO.D.S.FWM2.IP","Soybeans ($25)","COMMODITIES","MAY-22",1682.8,1684.8,"CO","D","S","FWM2","IP","M","$",25
+"33","CO.D.SB.FWM4.IP","NY Sugar No. 11 ($5.60)","COMMODITIES","MAY-22",1828.5,1834.5,"CO","D","SB","FWM4","IP","M","$",5.6
+"34","CO.D.SM.FWM1.IP","Soybean Meal ($0.50)","COMMODITIES","MAY-22",45260,45340,"CO","D","SM","FWM1","IP","M","$",0.5
+"35","CO.D.W.FWM4.IP","Chicago Wheat ($25)","COMMODITIES","MAY-22",983.6,984.6,"CO","D","W","FWM4","IP","M","$",25
