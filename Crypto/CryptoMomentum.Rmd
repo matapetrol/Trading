@@ -43,7 +43,7 @@ DATA=bind_rows(pblapply(FTX.tickers, function(x){
     select(ticker,date,open,high,low,close,volume)
 }))
 
-head(DATA%>%filter(date==max(date)))
+DATA%>%filter(date==max(date))
 
 ```
 ## Processing FTX historical data
