@@ -114,8 +114,8 @@ mom_factors = P %>%
     # Range over recent history
     mutate(
       t_rrp_25 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 25),
-      t_rrp_30 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 30),
-      t_rrp_50 = (close_spot - roll_mean(close_spot, 25)) / roll_sd(close_spot, 50)
+      t_rrp_30 = (close_spot - roll_mean(close_spot, 30)) / roll_sd(close_spot, 30),
+      t_rrp_50 = (close_spot - roll_mean(close_spot, 50)) / roll_sd(close_spot, 50)
     ) %>%
     # Range
     mutate(
